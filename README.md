@@ -15,10 +15,10 @@
 
 ##Variables
 
-#### config
+##### config
 El array de configuración.
 
-#### lastResponse
+##### lastResponse
 Devuelve la información sobre el último llamado para debug.
 
 ##Métodos
@@ -26,7 +26,7 @@ Devuelve la información sobre el último llamado para debug.
 ----------
 
 ### Básicos
-####	configureMode($config:array)
+#####	configureMode($config:array)
 Permite configurar la instancia
 	
 	$config = array(
@@ -36,43 +36,43 @@ Permite configurar la instancia
 		country => 1044	
 	);
 
-#### api($api_method:string,$data:array,$method="POST",$version = 'v3') 
+##### api($api_method:string,$data:array,$method="POST",$version = 'v3') 
 Hace una llamada en nivel bajo y devuelve la respuesta como objeto
 
 ----------
 
 ### Usuarios
 
-#### register($data:array)
+##### register($data:array)
 Recibe un objeto 'person' de Thalamus (array) ver documentación de thalamus para estructura.
 
-### updateUser($data:array)
+##### updateUser($data:array)
 Recibe un objeto 'person' de Thalamus. actualiza los datos. Debe estar logeado.
 
-#### login($main,$password)
+##### login($main,$password)
 Logea un usuario, devuelve su información, y la setea en la sesión como THALAMUS_USER. También se puede obtener como .getUser()
 
 
-#### logout()
+##### logout()
 Elimina las variables de sesión asociadas a Thalamus
 
-#### getUser($force = FALSE)
+##### getUser($force = FALSE)
 Devuelve el usuario en la sesión, o la va a buscar de thalamus si se puede. $force para forzar el último comportamiento mencionado.
 
-#### resetPassword($main)
+##### resetPassword($main)
 Genera un pedido de reseteo de password a Thalamus a la cuenta asociada a $main
 
 ----------
 
 ### Información
 
-#### getCountries()
+##### getCountries()
 
 Devuelve un listado con países ('/referencedata/countries')
 
-#### getStates($country_id:int)
+##### getStates($country_id:int)
 
 Devuelve un listado con regiones o estados. Si no se da el $country_id, usa el de la configuración.
 
-#### getCities($state_id:int)
+##### getCities($state_id:int)
 Devuelve un listado con las ciudades de la región/

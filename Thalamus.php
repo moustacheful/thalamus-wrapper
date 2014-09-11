@@ -145,8 +145,16 @@
 			return $result;
 		}
 
-		public function resetPassword( $main ){
+		public function requestResetPassword( $main ){
 			return $this->api('person/password/requestreset',array('principal'=>$main),'POST','v1');
+		}
+
+		public function resetPassword( $main, $newPassword, $token ){
+			return $this->api('person/password',array(
+				'token' => $token,
+				'password' => $newPassword,
+				'principal' => $main
+			),'PUT','v1');
 		}
 
 		public function getFBLoginURL( $callback_url ) {
